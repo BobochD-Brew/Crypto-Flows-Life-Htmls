@@ -15,24 +15,53 @@
 
             let id = 225;
             let state = [];
+            let cleanState = [];
             let interval;
             let playing = true;
             let stateList = []
             let updateF = ()=>{
-            if(!check(state,nextState(state)))  {
-                stateList.push(copyState(state))
-                state = nextState(state)
-                drawState(state)
-            }
+                if(!check(state,nextState(state)))  {
+                    stateList.push(copyState(state))
+                    state = nextState(state)
+                    drawState(state)
+                }else{
+                    stateList.push(copyState(state))
+                    state = [];
+                    for(let i = 0; i < rows ; i++){
+                        state.push([])
+                        for(let j = 0; j < rows ; j++){
+                        state[i].push(0)
+                        }
+                    }
+                    let idString = id.toString(2)
+                    for(let i = 0; i < (9-id.toString(2).length);i++){
+                        idString = "0"+idString;
+                    }
+                    for(let i = 0; i < idString.length;i++){
+                        if(idString[i] == '1'){
+                        squarex = i % 3;
+                        squarey = int(i/3)
+                        state[(rows-3)/2 + squarex][(rows-3)/2 + squarey] = 1
+                        }
+                    }
+                    drawState(state)
+                }
             }
 
             function setup() {
             
             createCanvas(sizex, sizey);
+            state = [];
             for(let i = 0; i < rows ; i++){
                 state.push([])
                 for(let j = 0; j < rows ; j++){
                 state[i].push(0)
+                }
+            }
+            for(let i = 0; i < rows ; i++){
+                cleanState.push([])
+                for(let j = 0; j < rows ; j++){
+                cleanState[i].push(0)
                 }
             }
             let idString = id.toString(2)
