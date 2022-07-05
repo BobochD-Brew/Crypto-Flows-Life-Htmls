@@ -138,7 +138,11 @@ for k in range(512):
             }
 
             }
-
+            function windowResized() {
+                sizex = Math.min(innerWidth,innerHeight);
+                sizey = Math.min(innerWidth,innerHeight);
+                resizeCanvas(sizex, sizey);
+            }
             function nextState(stateToUpdate){
             let newState = [];
             for(let i = 0; i < rows ; i++){
