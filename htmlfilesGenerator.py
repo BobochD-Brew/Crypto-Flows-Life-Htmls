@@ -2,8 +2,8 @@ for k in range(512):
     f = open(str(k)+".html", "w")
     f.write(""" 
     <!DOCTYPE html><html lang="en"><head>
-        <script src="p5.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://bobochd-brew.github.io/Crypto-Flows-Life-Htmls/p5.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://bobochd-brew.github.io/Crypto-Flows-Life-Htmls/style.css">
         <meta charset="utf-8">
 
     </head>
