@@ -11,8 +11,8 @@ for k in range(512):
         <main>
         </main>
         <script>
-            let sizex = innerWidth;
-            let sizey = innerHeight;
+            let sizex = min(innerWidth,innerHeight);
+            let sizey = min(innerWidth,innerHeight);
             let rows = 11;
 
             let id = """+str(k)+""";
