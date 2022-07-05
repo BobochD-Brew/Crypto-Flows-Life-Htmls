@@ -13,9 +13,9 @@ for k in range(512):
         <script>
             let sizex = innerWidth;
             let sizey = innerHeight;
-            let rows = """+str(k)+""";
+            let rows = 11;
 
-            let id = 56;
+            let id = """+str(k)+""";
             let state = [];
             let interval;
             let playing = true;
@@ -29,7 +29,7 @@ for k in range(512):
             }
 
             function setup() {
-            id = int(random(0,512))
+            
             createCanvas(sizex, sizey);
             for(let i = 0; i < rows ; i++){
                 state.push([])
